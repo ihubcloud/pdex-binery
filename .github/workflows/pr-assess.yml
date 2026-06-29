@@ -1,0 +1,13 @@
+name: PR Assess
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+permissions:
+  contents: write
+  pull-requests: write
+  statuses: write
+  id-token: write
+jobs:
+  assess:
+    uses: ihubcloud/ci/.github/workflows/pr-assess.yml@main
+    secrets: inherit
